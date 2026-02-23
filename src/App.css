@@ -1,0 +1,111 @@
+/* Dexter-inspired Dark Red Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Dark background */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* deep dark gradient */
+  background: radial-gradient(circle at center, #1a0000 0%, #0a0a0a 50%, #000000 100%);
+
+  color: #ffffff;
+}
+
+/* Root container */
+#root {
+  text-align: center;
+}
+
+/* Main heading styled like dark cinematic card */
+h1 {
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  padding: 35px 60px;
+
+  color: #ff1a1a;
+
+  background: rgba(10, 10, 10, 0.85);
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 0, 0, 0.3);
+
+  /* blood red glow */
+  box-shadow:
+    0 0 10px rgba(255, 0, 0, 0.5),
+    0 0 25px rgba(255, 0, 0, 0.3),
+    inset 0 0 10px rgba(255, 0, 0, 0.2);
+
+  transition: all 0.4s ease;
+
+  /* animation */
+  animation: fadeIn 1s ease;
+}
+
+/* Hover effect */
+h1:hover {
+  transform: scale(1.05);
+
+  box-shadow:
+    0 0 15px rgba(255, 0, 0, 0.8),
+    0 0 40px rgba(255, 0, 0, 0.5),
+    inset 0 0 15px rgba(255, 0, 0, 0.4);
+
+  color: #ffffff;
+}
+
+/* Blinking red line effect */
+h1::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 2px;
+  margin: 15px auto 0;
+
+  background: red;
+
+  box-shadow: 0 0 10px red;
+
+  animation: pulse 1.5s infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+    width: 40%;
+  }
+  50% {
+    opacity: 1;
+    width: 70%;
+  }
+  100% {
+    opacity: 0.3;
+    width: 40%;
+  }
+}
